@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>المنظومة الإلكترونية لإدارة ومتابعة أعمال اللجنة الميدانية</title>
+  <meta name="theme-color" content="#063f32" />
+  <style>
+    :root {
+      --green:#063f32;
+      --green2:#0c624b;
+      --gold:#b98a2b;
+      --gold2:#d7aa46;
+      --cream:#fbf7ec;
+      --ink:#11372d;
+      --muted:#5d645f;
+      --shadow: 0 18px 45px rgba(7,39,31,.16);
+    }
+    * { box-sizing:border-box; }
+    body {
+      margin:0; min-height:100vh; direction:rtl;
+      font-family: "Arial", "Tahoma", sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 15% 12%, rgba(215,170,70,.20), transparent 28%),
+        radial-gradient(circle at 85% 18%, rgba(6,63,50,.18), transparent 30%),
+        linear-gradient(180deg,#0b3f33 0 72px,#fdfaf2 72px 100%);
+    }
+    .top-wave { height:92px; background:linear-gradient(135deg,#063f32,#0b5c48); border-bottom:5px solid var(--gold2); border-radius:0 0 50% 50%/0 0 22% 22%; }
+    .page { max-width:1100px; margin:-46px auto 0; padding:0 18px 34px; }
+    .hero {
+      position:relative; overflow:hidden;
+      background:rgba(255,255,255,.88);
+      border:1px solid rgba(185,138,43,.32);
+      border-radius:34px;
+      padding:36px 34px 42px;
+      box-shadow:var(--shadow);
+    }
+    .hero:before {
+      content:""; position:absolute; inset:0; opacity:.15; pointer-events:none;
+      background:
+        repeating-linear-gradient(135deg, transparent 0 18px, rgba(185,138,43,.12) 18px 19px),
+        radial-gradient(circle at center, rgba(6,63,50,.08), transparent 50%);
+    }
+    .logos { position:relative; display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:4px; }
+    .logo { width:118px; height:118px; object-fit:contain; border-radius:50%; background:#fff; padding:7px; box-shadow:0 8px 24px rgba(0,0,0,.12); }
+    .title { position:relative; text-align:center; margin:4px auto 30px; max-width:830px; }
+    h1 { margin:0; line-height:1.35; font-size:clamp(28px,5.5vw,54px); font-weight:900; color:var(--green); letter-spacing:-1px; }
+    h2 { margin:8px 0 0; line-height:1.55; font-size:clamp(18px,3.2vw,31px); font-weight:800; color:var(--green); }
+    .region { display:block; color:var(--gold); font-weight:900; margin-top:6px; }
+    .welcome {
+      position:relative; margin:0 auto 32px; width:max-content; max-width:100%;
+      padding:12px 38px; border-radius:999px;
+      color:#fff; background:linear-gradient(135deg,#063f32,#0a5745);
+      border:1px solid var(--gold2); box-shadow:0 10px 24px rgba(6,63,50,.18);
+      font-size:clamp(17px,2.5vw,24px); font-weight:800;
+    }
+    .cards { position:relative; display:grid; grid-template-columns:repeat(3,1fr); gap:24px; direction:rtl; }
+    .card {
+      background:linear-gradient(180deg,#fffaf0,#fff 68%);
+      border:1px solid rgba(185,138,43,.34);
+      border-radius:26px;
+      min-height:360px;
+      padding:26px 22px 24px;
+      text-align:center;
+      box-shadow:0 16px 34px rgba(0,0,0,.10);
+      display:flex; flex-direction:column; align-items:center; justify-content:space-between;
+      transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      text-decoration:none; color:inherit;
+    }
+    .card:hover, .card:focus { transform:translateY(-6px); box-shadow:0 22px 48px rgba(6,63,50,.20); border-color:var(--gold); outline:none; }
+    .icon { width:96px; height:96px; display:grid; place-items:center; border-radius:50%; color:#fff; font-size:48px; margin-top:-4px; box-shadow:0 10px 24px rgba(0,0,0,.16); border:6px solid #fff; }
+    .blue .icon, .blue .button { background:linear-gradient(135deg,#082d55,#063f32); }
+    .green .icon, .green .button { background:linear-gradient(135deg,#0b6a51,#063f32); }
+    .gold .icon, .gold .button { background:linear-gradient(135deg,#d4a13c,#9b6b18); }
+    .card-title { font-size:clamp(22px,3vw,31px); line-height:1.45; font-weight:900; margin:18px 0 8px; color:var(--green); }
+    .card-note { font-size:17px; line-height:1.8; color:#2a3f38; margin:0 auto 18px; max-width:270px; }
+    .divider { width:76px; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); margin:8px auto 14px; }
+    .button { width:100%; max-width:230px; color:#fff; border-radius:16px; padding:13px 18px; font-size:20px; font-weight:900; display:flex; align-items:center; justify-content:center; gap:10px; box-shadow:0 8px 20px rgba(0,0,0,.16); }
+    .footer { position:relative; text-align:center; margin-top:28px; padding:25px 14px 6px; color:var(--green); }
+    .footer .seal { width:44px; height:44px; border-radius:50%; background:var(--green); color:var(--gold2); display:grid; place-items:center; margin:0 auto 8px; font-size:24px; }
+    .footer p { margin:0; font-weight:900; font-size:clamp(18px,3vw,26px); color:var(--gold); }
+    .mountains { position:relative; height:90px; margin:18px -34px -42px; background:linear-gradient(0deg,#063f32 0 55%,transparent 55%); overflow:hidden; }
+    .mountains:before { content:""; position:absolute; bottom:28px; right:0; left:0; height:70px; opacity:.65; background:linear-gradient(135deg, transparent 0 8%, rgba(185,138,43,.35) 8% 10%, transparent 10% 20%, rgba(6,63,50,.22) 20% 23%, transparent 23% 34%, rgba(185,138,43,.40) 34% 37%, transparent 37% 48%, rgba(6,63,50,.25) 48% 52%, transparent 52%); clip-path:polygon(0 80%, 11% 44%, 19% 70%, 31% 26%, 43% 74%, 55% 36%, 66% 70%, 78% 28%, 89% 62%, 100% 35%, 100% 100%, 0 100%); }
+    @media (max-width:850px) {
+      .hero { padding:26px 18px 34px; border-radius:26px; }
+      .logo { width:86px; height:86px; }
+      .cards { grid-template-columns:1fr; max-width:460px; margin:0 auto; }
+      .card { min-height:300px; }
+      .card-note { max-width:330px; }
+      .mountains { margin-left:-18px; margin-right:-18px; margin-bottom:-34px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-wave"></div>
+  <main class="page">
+    <section class="hero" aria-label="بوابة المنظومة الإلكترونية">
+      <div class="logos" aria-label="الشعارات الرسمية">
+        <img class="logo" src="assets/border_guard_logo.jpg" alt="شعار حرس الحدود" />
+        <img class="logo" src="assets/moi_logo.jpg" alt="شعار وزارة الداخلية" />
+      </div>
+      <header class="title">
+        <h1>المنظومة الإلكترونية</h1>
+        <h2>لإدارة ومتابعة أعمال اللجنة الميدانية<br><span class="region">لحرم الحدود بمنطقة عسير</span></h2>
+      </header>
+      <div class="welcome">مرحبًا بكم في المنظومة الإلكترونية</div>
+
+      <div class="cards">
+        <a class="card blue" href="https://drive.google.com/file/d/12J7P5I63puFEeDJ67X_Apnh1hB-uf67C/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="مشاهدة العرض المرئي للمنظومة">
+          <div>
+            <div class="icon">▶</div>
+            <div class="card-title">العرض المرئي<br>للمنظومة</div>
+            <div class="divider"></div>
+            <p class="card-note">مشاهدة العرض المرئي الخاص بالمنظومة وأعمال اللجنة الميدانية.</p>
+          </div>
+          <div class="button">▶ مشاهدة العرض</div>
+        </a>
+
+        <a class="card green" href="https://drive.google.com/file/d/1OwT8ZMhmXPFpbzUPO1JHjyEbPEEH9v_Q/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="فتح دليل استخدام قاعدة البيانات الخاصة بسكرتارية اللجنة الميدانية">
+          <div>
+            <div class="icon">📖</div>
+            <div class="card-title">دليل استخدام قاعدة البيانات<br>الخاصة بسكرتارية اللجنة الميدانية</div>
+            <div class="divider"></div>
+            <p class="card-note">الاطلاع على دليل استخدام قاعدة البيانات الخاصة بسكرتارية اللجنة الميدانية.</p>
+          </div>
+          <div class="button">📖 فتح الدليل</div>
+        </a>
+
+        <a class="card gold" href="https://drive.google.com/file/d/1jPrxe-s12pWWLp077mHebot_IOkiLADB/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="فتح دليل استخدام قاعدة بيانات لجنة التثمين">
+          <div>
+            <div class="icon">📘</div>
+            <div class="card-title">دليل استخدام قاعدة بيانات<br>لجنة التثمين</div>
+            <div class="divider"></div>
+            <p class="card-note">الاطلاع على دليل استخدام قاعدة بيانات لجنة التثمين وإجراءاتها.</p>
+          </div>
+          <div class="button">📖 فتح الدليل</div>
+        </a>
+      </div>
+
+      <footer class="footer">
+        <div class="seal">✦</div>
+        <p>مع تحيات اللجنة الميدانية لحرم الحدود بمنطقة عسير</p>
+      </footer>
+      <div class="mountains" aria-hidden="true"></div>
+    </section>
+  </main>
+</body>
+</html>
